@@ -1,9 +1,125 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <title> Marco Barbaccia </title>
-    <h1> Marco Barbaccia </h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+	  body {
+	    margin: 0;
+	    font-size: 28px;
+	    font-family: Arial, Helvetica, sans-serif;
+		color: white;
+		background-color:#008080;
+  	  }
+
+	  .header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+	    width: 100%;
+	    background-color:#016B6B;
+	  }
+
+	  .header h2 {
+	  padding-left: 5px;
+	    text-align: left;
+		color: white;
+	  }
+
+	  .progress-container {
+	    width: 100%;
+	    height: 8px;
+	    background: #ccc;
+	  }
+
+	  .progress-bar {
+	    height: 8px;
+	    background: #4caf50;
+	    width: 0%;
+	  }
+
+	  .content {
+        padding: 100px 0;
+	    margin: 30px auto 0 auto;
+	    width: 80%;
+	  }
+	  
+	  .copyright{
+	   font-size: 15px;
+	   position: fixed;     
+       text-align: center;    
+       bottom: 0px; 
+       width: 100%;
+	  }
+	  
+    </style>
+    <link rel="icon" type="image/png" href="icon.png"/>
+    <title>Marco Barbaccia</title>
   </head>
   <body>
-    <p> ciao </p>
+
+    <div class="header">
+	  <img src="icon.png" width="100px" style="float:left;margin: 10px" alt="favicon">
+	  <a href="https://www.instagram.com/marco_barbaccia/">
+      <img  alt="W3Schools" src="instagram.png" width="160px" style="float:right">
+      </a>
+	  <a href="https://www.facebook.com/marco.barbaccia.7/">
+      <img  alt="W3Schools" src="facebook.png" width="120px" style="float:right">
+      </a>
+      <h2>Marco Barbaccia</h2>
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+        </div>  
+      </div>
+
+    <div class="content">
+	  <img src="card.png" style="float:left; margin: 20px" width="60px" alt="abme">
+      <h2>About me:</h2>
+	  <p>I've attended for 2 years the "ISIS Pontormo" Scientific school where I've learnt the C Programming language.<br> 
+	     Then, during the third year, I've changed school and started to attend the "G.Ferraris" ICT school where I've learnt:<p/>  
+	  <ul>
+	    <li>C++</li>
+	    <li>Assembly</li>
+	    <li>Java</li>
+	    <li>HTML</li>
+	    <li>Javascript</li>
+	    <li>SQL</li>
+	    <li>PHP</li>
+   	  </ul>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <img src="weights.png" style="float:left; margin: 20px" width="60px" alt="hobby">
+	  <h2>Hobbies:</h2>
+	  <p>I have practiced competitive swimming for 10 years in the "Certaldo Nuoto" company.<br>
+	     In 2018 I gave up swimming to dedicate myself to the study and to the gym.<br>
+	     I am currently still going to the gym but from home, due to the global pandemic.
+	  </p>
+	  
+    </div>
+	<div class="copyright">
+	&copy;
+      <span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+		- <b>Marco Barbaccia</b>
+		</span>
+    </div>
+  
+  <div><i class="fa fa-instagram ft60 clr-prl"></i> </div>
+  
+    <div><i class="fa fa-instagram ft60 clr-blue"></i> </div>
+    <script>
+      // When the user scrolls the page, execute myFunction 
+	  window.onscroll = function() {myFunction()};
+
+	  function myFunction() {
+	  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	  var scrolled = (winScroll / height) * 100;
+	  document.getElementById("myBar").style.width = scrolled + "%";
+	  }
+	</script>
   </body>
-</html>
+</html> 
