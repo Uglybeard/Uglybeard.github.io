@@ -1,128 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-	  body {
-	    margin: 0;
-	    font-size: 2rem;
-	    font-family: Arial, Helvetica, sans-serif;
-		color: white;
-		background-color:#008080;
-  	  }
+      /*CSS per modalità light*/
+      body {
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-	  .header {
-	    
-	    box-shadow: 0.2rem 0.2rem 0.2rem #036B6B;
-		padding-left:0;
-	    font-size: 1.2rem;
-		height: 4rem;
-        position: fixed;
-        top: 0;
-	    width: 100%;
-	    background-color:#016B6B;
-	  }
+      /*CSS per modalità dark*/
+      .dark-mode {
+        background-color: #000;
+        color: #fff;
+      }
 
-	  .header h2 {
-	    font-family: Verdana, sans-serif;
-		padding-left: 5rem;
-	    top: 0;
-	    position: fixed;
-	    text-align: left;
-		color: white;
-	  }
+      /*Stile generale per la scritta*/
+      h1 {
+        font-size: 72px;
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      /*Stile per il bottone*/
+      .dark-mode-toggle {
+        background-color: #fff;
+        border: none;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        outline: none;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
 
-	  .progress-container {
-	    width: 100%;
-	    height: 8px;
-	    background: #ccc;
-	  }
-
-	  .progress-bar {
-	    height: 8px;
-	    background: #4caf50;
-	    width: 0%;
-	  }
-
-	  .content {
-        padding: 100px 0;
-	    margin: 30px auto 0 auto;
-	    width: 80%;
-	  }
-	  
-	  .copyright{
-	   font-size: 1rem;
-	   position: fixed;     
-       text-align: center;    
-       bottom: 0px; 
-       width: 100%;
-	  }
-	  
+      /*Stile forma bottone*/
+      .dark-mode-toggle::before {
+        content: "";
+        background-color: #000;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
     </style>
-    <link rel="icon" type="image/png" href="icon.png"/>
-    <title>Marco Barbaccia</title>
   </head>
   <body>
-
-    <div class="header">
-	  <img src="icon.png" width="50rem" style="float:left;margin: 10px" alt="favicon">
-      <h2>Marco Barbaccia</h2>
-      <div class="progress-container">
-        <div class="progress-bar" id="myBar"></div>
-        </div>  
-      </div>
-
-    <div class="content">
-	  <img src="card.png" style="float:left; margin: 2rem" width="60rem" alt="abme">
-      <h2>About me:</h2>
-	  <p>I've attended for 2 years the "ISIS Pontormo" Scientific school where I've learnt the C Programming language.<br> 
-	     Then, during the third year, I've changed school and started to attend the "G.Ferraris" ICT school where I've learnt:<p/>  
-	  <ul>
-	    <li>C++</li>
-	    <li>Assembly</li>
-	    <li>Java</li>
-	    <li>HTML</li>
-	    <li>Javascript</li>
-	    <li>SQL</li>
-	    <li>PHP</li>
-   	  </ul>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <br>
-	  <img src="weights.png" style="float:left; margin: 2rem" width="60rem" alt="hobby">
-	  <h2>Hobbies:</h2>
-	  <p>I have practiced competitive swimming for 10 years in the "Certaldo Nuoto" company.<br>
-	     In 2018 I gave up swimming to dedicate myself to the study and to the gym.<br>
-	     I am currently still going to the gym but from home, due to the global pandemic.
-	  </p>
-	  
-    </div>
-	<div class="copyright">
-	&copy;
-      <span id="copyright">
-        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-		- <b>Marco Barbaccia</b>
-		</span>
-    </div>
-	  <a href="https://www.instagram.com/marco_barbaccia/">
-      <img  alt="W3Schools" src="instagram.png" width="160px" style="float:right">
-      </a>
-	  <a href="https://www.facebook.com/marco.barbaccia.7/">
-      <img  alt="W3Schools" src="facebook.png" width="120px" style="float:right">
-      </a>
-    <script>
-      // When the user scrolls the page, execute myFunction 
-	  window.onscroll = function() {myFunction()};
-
-	  function myFunction() {
-	  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-	  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-	  var scrolled = (winScroll / height) * 100;
-	  document.getElementById("myBar").style.width = scrolled + "%";
-	  }
-	</script>
+    <h1>Who Am I?</h1>
+    <!-- Bottone per attivare la modalità dark -->
+    <button class="dark-mode-toggle" onclick="document.body.classList.toggle('dark-mode')"></button>
   </body>
-</html> 
+</html>
