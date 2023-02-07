@@ -39,7 +39,7 @@
         right: 20px;
       }
 
-      /*Stile forma bottone*/
+      /*Stile per la forma della luna*/
       .dark-mode-toggle::before {
         content: "";
         background-color: #000;
@@ -53,8 +53,27 @@
     </style>
   </head>
   <body>
-    <h1>Who Am I?</h1>
+    <h1 id="message">Who Am I?</h1>
     <!-- Bottone per attivare la modalità dark -->
-    <button class="dark-mode-toggle" onclick="document.body.classList.toggle('dark-mode')"></button>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()"></button>
+    
+    <script>
+      let toggleCount = 0;
+      
+      function toggleDarkMode() {
+        toggleCount++;
+        document.body.classList.toggle('dark-mode');
+        if (document.body.classList.contains('dark-mode')) {
+          document.getElementById('message').innerHTML = 'Who are you?';
+        } else {
+          document.getElementById('message').innerHTML = 'Who Am I?';
+        }
+        
+        if (toggleCount === 2) {
+          document.getElementById('message').innerHTML = 'Who is asking?';
+          document.querySelector('.dark-mode-toggle').style.display = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
